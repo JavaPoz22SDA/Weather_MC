@@ -12,7 +12,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj miasto, dla którego chcesz sprawdzić temperaturę.");
         String city = scanner.nextLine();
-        Current current = weatherService.getCityWeather(city);
-        System.out.println("Temperatura w " + city + " wynosi " + current.getTemperature() + " stopni.");
+        Weather weather = weatherService.getCityWeather(city);
+        System.out.println("Temperatura w " + city + " wynosi " + weather.getCurrent().getTemperature() + " stopni.");
     }
 }

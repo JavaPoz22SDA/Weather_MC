@@ -12,11 +12,11 @@ public class WeatherService {
         this.finalURL = url + "?access_key=" + kluczApi + "&query=";
     }
 
-    public Current getCityWeather (String city) throws IOException {
+    public Weather getCityWeather (String city) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         String url = finalURL + city;
         Weather weather = mapper.readValue(new URL(url),Weather.class);
-        return weather.getCurrent();
+        return weather;
     }
 
 

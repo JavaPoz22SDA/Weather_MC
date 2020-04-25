@@ -1,0 +1,12 @@
+{
+  "temperature": 23.5,
+  "city": "Poznan",
+  "request": {
+    "type": "City",
+    "query": "Poznan, Poland"
+  },
+  "location": {
+    "name": "Poznan",
+    "country": "Poland"
+  }
+}

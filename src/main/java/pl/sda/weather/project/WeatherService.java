@@ -14,8 +14,10 @@ public class WeatherService {
 
     public Current getCityWeather (String city) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        String url = finalURL + "city";
+        String url = finalURL + city;
         Weather weather = mapper.readValue(new URL(url),Weather.class);
         return weather.getCurrent();
     }
+
+
 }

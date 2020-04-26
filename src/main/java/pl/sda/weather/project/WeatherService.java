@@ -19,6 +19,7 @@ public class WeatherService {
         return weather;
     }
 
+// można też używać metody replace z klasy STring i zamienić spacje na %20
     public static String chceckGivenCity (String city){
         String finalCity = city.trim();
         if (finalCity.contains(" ")){

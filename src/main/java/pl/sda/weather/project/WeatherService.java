@@ -19,5 +19,17 @@ public class WeatherService {
         return weather;
     }
 
+    public static String chceckGivenCity (String city){
+        String finalCity = city.trim();
+        if (finalCity.contains(" ")){
+            String[] array = city.split(" ");
+            finalCity = array[0];
+            for (int i = 1; i < array.length; i++){
+                finalCity = finalCity + "%20" + array[i];
+            }
+        }
+        return finalCity;
+    }
+
 
 }

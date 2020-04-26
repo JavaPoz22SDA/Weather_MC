@@ -1,5 +1,7 @@
 package pl.sda.weather.project;
 
+import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -11,8 +13,12 @@ public class Main {
         WeatherService weatherService = new WeatherService(url,kluczApi);
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj miasto, dla którego chcesz sprawdzić temperaturę.");
-        String city = scanner.nextLine();
-        Weather weather = weatherService.getCityWeather(city);
-        System.out.println("Temperatura w " + city + " wynosi " + weather.getCurrent().getTemperature() + " stopni.");
+        String city = scanner.nextLine().trim();
+        try {
+            Weather weather = weatherService.getCityWeather(WeatherService.chceckGivenCity(city));
+            System.out.println("Temperatura w " + city + " wynosi " + weather.getCurrent().getTemperature() + " stopni.");
+        } catch (UnrecognizedPropertyException e) {
+            System.out.println("Podane miasto nie istnieje.");
+        }
     }
 }

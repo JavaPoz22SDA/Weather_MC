@@ -8,8 +8,8 @@ import java.net.URL;
 public class WeatherService {
     private String finalURL;
 
-    public WeatherService(String url, String kluczApi) {
-        this.finalURL = url + "?access_key=" + kluczApi + "&query=";
+    public WeatherService(String url, String keyApi) {
+        this.finalURL = url + "?access_key=" + keyApi + "&query=";
     }
 
     public Weather getCityWeather (String city) throws IOException {
